@@ -2,6 +2,7 @@ package main.java.com.eventsystem;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.WeakHashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import lombok.*;
 /**
@@ -35,9 +36,12 @@ public class EventSystem {
 	/** limit for the maximum number of events per user **/
     private int limit;
 	/** collection to store the number of events produced on user **/
-	private Map<Long, Integer> eventsPerUser = new HashMap<>();
+	/** avoid OutOfMemoryError by using weak hash map for caching
+	 * see this https://devlearnings.wordpress.com/2010/07/05/maps-can-avoid-java-lang-outofmemoryerror/
+	 *  **/
+	private Map<Long, Integer> eventsPerUser = new WeakHashMap<>();
 	/** collection to store timestamp when a user became robot ( the number of events was greater than the admited limit ) **/
-	private Map<Long, Long> timeWhenAUserBecameRobot = new HashMap<>();
+	private Map<Long, Long> timeWhenAUserBecameRobot = new WeakHashMap<>();
 
 	/**
 	 * constructor using argument the limit admited for the number of events
@@ -93,14 +97,4 @@ public class EventSystem {
 	}
 
 
-	public int robotsCountFor(long time) {
-	      int robots =0;
-		 long startTimeInterval = System.currentTimeMillis()-time;
-		 for(Map.Entry<Long, Long>entry : timeWhenAUserBecameRobot.entrySet()) {
-			 if(entry.getValue() >startTimeInterval) {
-					robots++;
-				}
-		 }
-	    return robots;
-	}
 }
