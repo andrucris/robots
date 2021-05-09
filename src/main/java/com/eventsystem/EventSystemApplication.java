@@ -19,7 +19,7 @@ public class EventSystemApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/**").allowedOrigins("http://event-systemrobots.herokuapp.com");
+                registry.addMapping("/").allowedOrigins("http://event-systemrobots.herokuapp.com");
             }
         };
     }
