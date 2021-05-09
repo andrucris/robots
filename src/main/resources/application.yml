@@ -2,8 +2,8 @@
 
 EVENT_LIMIT: 100
 #
-#server:
-#  port: 8080
+server:
+  port: $PORT
   ## Logging settings
 logging:
   file:
