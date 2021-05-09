@@ -14,15 +14,7 @@ public class EventSystemApplication {
         SpringApplication.run(EventSystemApplication.class, args);
     }
 
-    @Bean
-    public WebMvcConfigurer corsConfigurer() {
-        return new WebMvcConfigurer() {
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/").allowedOrigins("http://event-systemrobots.herokuapp.com");
-            }
-        };
-    }
+
 }
 
 
