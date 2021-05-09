@@ -19,7 +19,7 @@ public class EventSystemApplication {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/").allowedOrigins("http://localhost:8080");
+                registry.addMapping("/").allowedOrigins("http://52.5.119.46:80");
             }
         };
     }
