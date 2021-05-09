@@ -17,6 +17,7 @@ import java.util.List;
  * event system controller
  * class for rest api
  */
+
 @RestController
 @RequestMapping("/events")
 public class EventSystemController {
@@ -28,14 +29,14 @@ public class EventSystemController {
     private EventSystem eventSystem;
 
 
-    @GetMapping("/")
+    @GetMapping("/all")
     public ResponseEntity<String> allEvents() {
         HttpStatus status = HttpStatus.CREATED;
         Integer noOfEvents = eventSystem.getEventsPerUser().size();
         return new ResponseEntity<>("events in number " + noOfEvents, status);
     }
 
-    @GetMapping("/{userId}")
+    @GetMapping("/all/{userId}")
     public ResponseEntity<String> allEventsByUser(@PathVariable(name = "userId") Long userId) {
         HttpStatus status = HttpStatus.CREATED;
         Integer noOfEvents = eventSystem.getEventsPerUser().get(userId);
