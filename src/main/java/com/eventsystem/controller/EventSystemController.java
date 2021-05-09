@@ -28,8 +28,15 @@ public class EventSystemController {
     private EventSystem eventSystem;
 
 
+    @GetMapping("/")
+    public ResponseEntity<String> allEvents() {
+        HttpStatus status = HttpStatus.CREATED;
+        Integer noOfEvents = eventSystem.getEventsPerUser().size();
+        return new ResponseEntity<>("events in number " + noOfEvents, status);
+    }
+
     @GetMapping("/{userId}")
-    public ResponseEntity<String> allEvents(@PathVariable(name = "userId") Long userId) {
+    public ResponseEntity<String> allEventsByUser(@PathVariable(name = "userId") Long userId) {
         HttpStatus status = HttpStatus.CREATED;
         Integer noOfEvents = eventSystem.getEventsPerUser().get(userId);
         if(noOfEvents == null){
