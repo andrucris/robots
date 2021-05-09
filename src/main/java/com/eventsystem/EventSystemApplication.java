@@ -1,4 +1,4 @@
-package main.java.com.eventsystem;
+package com.eventsystem;
 
 
 import org.springframework.boot.SpringApplication;

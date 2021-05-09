@@ -1,4 +1,4 @@
-package main.java.com.eventsystem.domain;
+package com.eventsystem.domain;
 
 
 import lombok.Getter;

@@ -1,6 +1,6 @@
-package main.java.com.eventsystem.config;
+package com.eventsystem.config;
 
-import main.java.com.eventsystem.domain.EventSystem;
+import com.eventsystem.domain.EventSystem;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

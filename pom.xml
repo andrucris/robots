@@ -40,6 +40,8 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
       </dependency>
+
+
       <!-- DevTools -->
       <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -49,11 +51,15 @@
       </dependency>
 
       <!-- Tests -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.0-M1</version>
 
+        </dependency>
       <dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
         <exclusions>
           <exclusion>
             <groupId>org.junit.vintage</groupId>
@@ -61,6 +67,10 @@
           </exclusion>
         </exclusions>
       </dependency>
+
+
+
+
     </dependencies>
     <build>
         <sourceDirectory>src</sourceDirectory>

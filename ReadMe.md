@@ -18,7 +18,6 @@ mvn spring-boot:run
 
 
 **Api Rest**
-curl -v localhost:8080/parks
-curl -v localhost:8080/parks/1
-curl -X POST localhost:8080/parks -H 'Content-type:application/json' -d '{"name": "Green Park"}'
-curl -X PUT localhost:8080/parks/1 -H 'Content-type:application/json' -d '{"name": "Summer Park"}'
+curl -v localhost:8080/events
+curl -X POST localhost:8080/events/1 -H 'Content-type:application/json' -d 
+curl -X PUT localhost:8080/events/robotsCount?timeIntervalMilliseconds=?3600 -H 'Content-type:application/json' -d 

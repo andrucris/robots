@@ -1,4 +1,4 @@
-package main.java.com.eventsystem.service;
+package com.eventsystem.service;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +33,7 @@ import lombok.*;
  * @author marcelanita
  *
  */
-import main.java.com.eventsystem.domain.EventSystem;
+import com.eventsystem.domain.EventSystem;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.slf4j.Logger;

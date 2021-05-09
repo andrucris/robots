@@ -1,4 +1,4 @@
-package main.java.com.eventsystem.exception;
+package com.eventsystem.exception;
 
 public class EventSystemException extends RuntimeException {
 

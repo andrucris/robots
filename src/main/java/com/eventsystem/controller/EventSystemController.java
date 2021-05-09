@@ -1,8 +1,8 @@
-package main.java.com.eventsystem.controller;
+package com.eventsystem.controller;
 
 
-import main.java.com.eventsystem.domain.EventSystem;
-import main.java.com.eventsystem.service.EventSystemService;
+import com.eventsystem.domain.EventSystem;
+import com.eventsystem.service.EventSystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * event system controller
@@ -25,6 +26,18 @@ public class EventSystemController {
 
     @Resource
     private EventSystem eventSystem;
+
+
+    @GetMapping("/{userId}")
+    public ResponseEntity<String> allEvents(@PathVariable(name = "userId") Long userId) {
+        HttpStatus status = HttpStatus.CREATED;
+        Integer noOfEvents = eventSystem.getEventsPerUser().get(userId);
+        if(noOfEvents == null){
+            noOfEvents = 0;
+        }
+        return new ResponseEntity<>("User with id " + userId + " has events in number " + noOfEvents, status);
+    }
+
 
     @PostMapping("/createEvent/{userId}")
     public ResponseEntity<String> event(@PathVariable(name = "userId") Long userId) {
